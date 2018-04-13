@@ -1,0 +1,140 @@
+body, html {
+  height: 100%;
+  color: #58585a;
+  font-size: 14px; }
+
+a {
+  color: #de1a21; }
+
+/* abas */
+.nav-tabs li {
+  margin-right: 15px; }
+.nav-tabs a {
+  border-radius: 0 !important;
+  background-color: #e5e5e5; }
+.nav-tabs li.active > a,
+.nav-tabs li.active > a:focus,
+.nav-tabs li.active > a:hover {
+  color: #fff;
+  background-color: #de1a21;
+  border: none; }
+.nav-tabs li:last-child {
+  float: right;
+  margin-right: 0; }
+
+/* tabelas */
+table {
+  width: 100%; }
+  table th {
+    color: #fff;
+    background: #de1a21;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center; }
+  table td {
+    padding: 15px; }
+
+/* formularios */
+.btn {
+  text-transform: uppercase;
+  color: #fff;
+  background: #de1a21;
+  border: none;
+  padding: 7px 25px;
+  border-radius: 0; }
+
+header {
+  float: left;
+  width: 100%; }
+  header .logo {
+    float: left;
+    margin: 30px 0; }
+  header .user-menu {
+    float: right;
+    margin: 45px 0;
+    text-transform: uppercase; }
+    header .user-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      header .user-menu ul li {
+        display: inline-block;
+        margin-left: 25px; }
+  header .main-menu {
+    width: 100%;
+    float: left;
+    padding: 10px 0;
+    background: #de1a21; }
+    header .main-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      header .main-menu ul li {
+        display: inline-block; }
+    header .main-menu a {
+      color: #fff; }
+  header h2 {
+    font-weight: normal;
+    color: #58585a;
+    font-size: 21px;
+    margin: 40px 0;
+    float: left; }
+    header h2 a {
+      text-transform: uppercase; }
+
+section.main {
+  width: 100%;
+  float: left;
+  min-height: 600px; }
+
+footer {
+  width: 100%;
+  float: left;
+  padding: 20px 0;
+  background: #e5e5e5;
+  text-align: center; }
+
+/*--- LOGIN ------------------------------------------------------------*/
+.login {
+  min-height: 100%;
+  background: #de1a21;
+  color: #fff; }
+  .login img.topo-login {
+    margin: 50px auto; }
+  .login form {
+    margin: auto;
+    max-width: 400px; }
+    .login form p.lost-password {
+      text-align: right;
+      margin-bottom: 25px; }
+      .login form p.lost-password a {
+        color: #fff; }
+    .login form input[type="text"],
+    .login form input[type="password"] {
+      margin-bottom: 25px;
+      border: 1px solid #fff;
+      border-radius: 0;
+      color: #fff;
+      background-color: #de1a21 !important; }
+      .login form input[type="text"]::-webkit-input-placeholder,
+      .login form input[type="password"]::-webkit-input-placeholder {
+        color: #fff; }
+      .login form input[type="text"]::-moz-placeholder,
+      .login form input[type="password"]::-moz-placeholder {
+        color: #fff;
+        opacity: 1; }
+      .login form input[type="text"]::-ms-input-placeholder,
+      .login form input[type="password"]::-ms-input-placeholder {
+        color: #fff; }
+  .login .btn {
+    background: #ffc924; }
+  .login footer {
+    display: none; }
+
+.lost-password {
+  text-align: center; }
+  .lost-password p {
+    margin-bottom: 25px; }
+
+/*# sourceMappingURL=geral.css.map */
