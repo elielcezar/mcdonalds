@@ -1,10 +1,14 @@
 <?php
-/*session_start();
-if (!isset($_SESSION['username'])){
-	header('Location: index.php');
-}*/
-?>
 
+session_start();
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  header("location: login.php");
+  exit;
+}
+require_once 'connect-logsportaltecnico.php';
+$username = $_SESSION['username'];
+
+?>
 
 <html>
 <head>
@@ -26,6 +30,16 @@ if (!isset($_SESSION['username'])){
 </head>
 <body>
 
+<?php
+$consulta = $pdo->query("SELECT email, area, password, id FROM users WHERE username='$username'");
+while($row = $consulta->fetch(PDO::FETCH_ASSOC)) {
+    $email = $row['email'];
+    $password = $row['password'];
+    $area = $row['area'];
+    $id = $row['id'];
+}
+?>
+
 <header>
 	<div class="container">
 		<a href="dashboard.php"><img src="img/logo.png" class="img-responsive logo"></a>
@@ -35,33 +49,19 @@ if (!isset($_SESSION['username'])){
 				<li class="logout"><a href="logout.php">Sair</a></li>
 			</ul>
 		</div>
+
 	</div>
 	<div class="main-menu">
 		<div class="container">
 			<ul>
-				<li><a href="dashboard.php">Home</a></li>
+				<li><a href="dashboard.php">Chamados</a></li>
+				<li><a href="status-rede.php">Status da Rede</a></li>
+				<li><a href="users.php">Gerenciar Usuários</a></li>
 			</ul>
-		</div>
-	</div>
-	<div class="container">
-		<div class="user">
-			<h2><a href="#">Ana Maria Costa - Mcdonalds</a> (ana.mcosta@br.mcd.com)</h2>
+
+			<div class="user">
+				<?php echo $username." (".$email.")"; ?></a>
+			</div>
 		</div>
 	</div>
 </header>
-
-<?php
-
-try {
-    $hostname = "131.255.239.38";
-    $port = 3030;
-    $dbname = "megaPortalTecnico";
-    $username = "usr_portaltecSenior";
-    $pw = "mega2017@portal";
-    $dbh = new PDO ("dblib:host=$hostname:$port;dbname=$dbname","$username","$pw");
-  } catch (PDOException $e) {
-    echo "Failed to get DB handle: " . $e->getMessage() . "\n";
-    exit;
-  }
-
-?>

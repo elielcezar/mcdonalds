@@ -1,3 +1,57 @@
+<?php
+
+require_once 'connect-logsportaltecnico.php';
+// MEGA06MAR2018
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+
+  // Validate email
+    if(empty(trim($_POST["email"]))){
+        $email_err = "Por favor informe um email válido";
+    } else{
+
+        // Prepare a select statement
+        $sql = "SELECT username, email FROM users WHERE email = :email";
+        
+        if($stmt = $pdo->prepare($sql)){
+            $stmt->bindParam(':email', $param_email, PDO::PARAM_STR);
+            $param_email = trim($_POST["email"]);
+            
+            // Attempt to execute the prepared statement
+            if($stmt->execute()){
+
+                  while($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+                      $username = $row->username;
+                  }
+
+                  if($stmt->rowCount() == 1){     
+
+                  $param_key = md5(uniqid(rand(), true));
+
+                  $sql = "UPDATE users SET 
+                      forgot_pass_identity = :key
+                      WHERE email = :email";
+                  $stmt = $pdo->prepare($sql);                                  
+                  $stmt->bindParam(':key', $param_key, PDO::PARAM_STR);
+                  $stmt->bindParam(':email', $param_email, PDO::PARAM_STR);
+                  $stmt->execute();                  
+
+                  require_once("forgot-password-recovery-mail.php");
+                   
+                } else{
+                    $msg_error = "Email não encontrado";
+                }
+            } else{
+                echo "Oops! Algo deu errado [validate email], por favor, tente novamente mais tarde";
+            }
+        }
+      
+    }
+
+}
+
+
+?>
 
 <html>
 <head>
@@ -18,19 +72,31 @@
 
 </head>
 <body class="login lost-password">
- 
+
+
 <div class="container">
 
   <a href="http://radiomcdonalds.megamidia.com.br/"><img src="img/topo-login.jpg" class="img-responsive topo-login"></a>
 
+  <?php if(isset($msg_success)){ ?>
+    <div class="message success"><?php echo $msg_success; ?></div>
+  <?php } ?>
+
+  <?php if(isset($msg_error)){ ?>
+    <div class="message error"><?php echo $msg_error; ?></div>
+  <?php } ?>
+
   <h2>Esqueceu sua senha?</h2>
-  <p>Digite seu nome de usuário ou endereço de e-mail. Você receberá um link por e-mail para criar uma nova senha.</p>
+  <p>Informe seu e-mail. Nós enviaremos um link para criar uma nova senha.</p>
 
-  <form class="form-signin" method="POST" action="#">
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-    <input type="text" name="username" class="form-control" placeholder="Login">
+    <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+      <input type="text" name="email" class="form-control" placeholder="email">
+      <span class="help-block"><?php echo $email_err; ?></span>
+    </div>
     
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
 
 </form>
 

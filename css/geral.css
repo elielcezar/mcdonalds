@@ -6,34 +6,67 @@ body, html {
 a {
   color: #de1a21; }
 
+h2 {
+  margin-bottom: 25px;
+  background: #f5f5f5;
+  padding: 7px 15px; }
+
 /* abas */
-.nav-tabs li {
-  margin-right: 15px; }
-.nav-tabs a {
-  border-radius: 0 !important;
-  background-color: #e5e5e5; }
-.nav-tabs li.active > a,
-.nav-tabs li.active > a:focus,
-.nav-tabs li.active > a:hover {
-  color: #fff;
-  background-color: #de1a21;
-  border: none; }
-.nav-tabs li:last-child {
-  float: right;
-  margin-right: 0; }
+.nav-tabs {
+  margin: 25px 0;
+  /*li:last-child{
+  	float: right;
+  	margin-right: 0;
+  }	*/ }
+  .nav-tabs li {
+    margin-right: 15px; }
+  .nav-tabs a {
+    border-radius: 0 !important;
+    background-color: #e5e5e5; }
+  .nav-tabs li.active > a,
+  .nav-tabs li.active > a:focus,
+  .nav-tabs li.active > a:hover {
+    color: #fff;
+    background-color: #de1a21;
+    border: none; }
+
+.message {
+  float: left;
+  width: 80%;
+  text-align: center;
+  padding: 20px;
+  margin: 0 10% 25px 10%; }
+  .message.success {
+    background: #ecffe6;
+    border: 1px solid #8ecd90; }
+  .message.error {
+    background: #fff;
+    color: #de1a21;
+    border: 1px solid #de1a21; }
 
 /* tabelas */
 table {
-  width: 100%; }
+  width: 100%;
+  font-size: 14px; }
   table th {
     color: #fff;
     background: #de1a21;
-    padding: 15px;
+    padding: 7px;
     text-transform: uppercase;
     font-weight: normal;
-    text-align: center; }
+    padding: 12px; }
+  table tr {
+    border-bottom: 1px solid #e5e5e5; }
+    table tr:hover {
+      background: #f5f5f5; }
   table td {
-    padding: 15px; }
+    padding: 12px; }
+  table td.flag-1 {
+    text-indent: -5000em;
+    background: url(../img/flag-1.png) center center no-repeat; }
+  table td.flag-2 {
+    text-indent: -5000em;
+    background: url(../img/flag-2.png) center center no-repeat; }
 
 /* formularios */
 .btn {
@@ -44,9 +77,51 @@ table {
   padding: 7px 25px;
   border-radius: 0; }
 
+select {
+  -webkit-appearance: button;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(../img/arrow-down.png);
+  background-position: 98.5% center;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  color: #999;
+  font-size: inherit;
+  overflow: hidden;
+  padding: 7px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #fff; }
+
+.btn.btn-primary {
+  background: #ffc924; }
+
+.btn.btn-secondary {
+  background: #a51d21; }
+  .btn.btn-secondary a:hover {
+    color: #fff; }
+
+.extra-action {
+  width: 100%; }
+  .extra-action a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: #a51d21;
+    margin-top: 25px; }
+    .extra-action a:hover {
+      color: #fff;
+      text-decoration: underline; }
+
+/* --- TOPO -------------------------------------------------------------*/
 header {
   float: left;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 25px; }
   header .logo {
     float: left;
     margin: 30px 0; }
@@ -65,41 +140,73 @@ header {
     width: 100%;
     float: left;
     padding: 10px 0;
-    background: #de1a21; }
+    background: #de1a21;
+    color: #fff; }
     header .main-menu ul {
       margin: 0;
       padding: 0;
-      list-style-type: none; }
+      list-style-type: none;
+      float: left; }
       header .main-menu ul li {
-        display: inline-block; }
+        display: inline-block;
+        margin-right: 25px; }
     header .main-menu a {
       color: #fff; }
-  header h2 {
-    font-weight: normal;
-    color: #58585a;
-    font-size: 21px;
-    margin: 40px 0;
-    float: left; }
-    header h2 a {
-      text-transform: uppercase; }
+    header .main-menu .user {
+      float: right; }
 
 section.main {
   width: 100%;
   float: left;
   min-height: 600px; }
 
-footer {
-  width: 100%;
-  float: left;
-  padding: 20px 0;
-  background: #e5e5e5;
+/* --- DASHBOARD -------------------------------------------------------*/
+.dashboard #rede table th:nth-child(5) {
   text-align: center; }
+
+/* --- CHAMADO INDIVIDUAL ----------------------------------------------*/
+.chamado {
+  /*.numero{
+  	h4{
+  		background: #f5f5f5;
+  		padding: 7px 15px;
+  	}
+  }*/
+  /*.item{
+  	padding: 2px 15px;
+  }*/ }
+  .chamado .chamado-detalhes {
+    padding: 15px;
+    border: 1px solid #58585a; }
+  .chamado .item.problema p {
+    float: left;
+    margin-right: 50px; }
+  .chamado .tramites h3 {
+    margin-top: 50px;
+    padding: 7px 15px;
+    background: #f5f5f5; }
+
+/* --- GERENCIAR USUARIOS ----------------------------------------------*/
+.gerenciar-usuarios .btn.novo {
+  float: left;
+  margin-bottom: 25px;
+  background: #ffc924; }
+  .gerenciar-usuarios .btn.novo:hover {
+    background: #de1a21;
+    color: #fff; }
+
+/* --- EXCLUIR USUARIO ------------------------------------------------*/
+.delete-user .info-user {
+  margin: 25px 0; }
 
 /*--- LOGIN ------------------------------------------------------------*/
 .login {
   min-height: 100%;
   background: #de1a21;
   color: #fff; }
+  .login .top {
+    text-align: center;
+    margin-bottom: 25px; }
   .login img.topo-login {
     margin: 50px auto; }
   .login form {
@@ -112,7 +219,7 @@ footer {
         color: #fff; }
     .login form input[type="text"],
     .login form input[type="password"] {
-      margin-bottom: 25px;
+      margin-top: 25px;
       border: 1px solid #fff;
       border-radius: 0;
       color: #fff;
@@ -127,14 +234,35 @@ footer {
       .login form input[type="text"]::-ms-input-placeholder,
       .login form input[type="password"]::-ms-input-placeholder {
         color: #fff; }
-  .login .btn {
-    background: #ffc924; }
+    .login form .help-block {
+      color: #fff;
+      margin-bottom: 20px;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 12px; }
   .login footer {
     display: none; }
 
-.lost-password {
+/* --- RECUPERAR SENHA ---------------------------------------------------*/
+.login.lost-password {
   text-align: center; }
-  .lost-password p {
+  .login.lost-password .message.success {
+    color: #58585a; }
+  .login.lost-password h2 {
+    float: left;
+    margin-top: 0;
+    width: 100%;
+    background: transparent; }
+  .login.lost-password input {
     margin-bottom: 25px; }
+
+/* --- RODAPE -----------------------------------------------------------*/
+footer {
+  width: 100%;
+  float: left;
+  padding: 20px 0;
+  background: #e5e5e5;
+  text-align: center;
+  margin-top: 100px; }
 
 /*# sourceMappingURL=geral.css.map */
