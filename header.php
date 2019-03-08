@@ -54,9 +54,11 @@ while($row = $consulta->fetch(PDO::FETCH_ASSOC)) {
 	<div class="main-menu">
 		<div class="container">
 			<ul>
-				<li><a href="dashboard.php">Chamados</a></li>
+				<li><a href="dashboard.php">Tickets Abertos</a></li>
 				<li><a href="status-rede.php">Status da Rede</a></li>
-				<li><a href="users.php">Gerenciar Usuários</a></li>
+        <?php if($area == "MegaMidia"){?>
+				      <li><a href="users.php">Gerenciar Usuários</a></li>
+        <?php } ?>
 			</ul>
 
 			<div class="user">

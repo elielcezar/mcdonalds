@@ -1,5 +1,34 @@
 <?php
 
+/*
+try {
+    $hostname = "131.255.239.38";
+    $port = 3061;
+    $dbname = "logs_portaltecnico";
+    $username = "usr_portaltec";
+    $pw = "portal@mega2017";
+    $dbh = new PDO ("mysql:host=$hostname;port=$port;dbname=$dbname","$username","$pw");
+  } 
+  catch (PDOException $e) {
+    echo "Failed to get DB handle: " . $e->getMessage();
+    exit;
+  }*/
+/*
+
+  try {
+    $hostname = "131.255.239.38";
+    $port = 3030;
+    $dbname = "logs_portaltecnico";
+    $username = "usr_portaltec";
+    $pw = "portal@mega2017";
+    $dbh = new PDO ("dblib:host=$hostname:$port;dbname=$dbname","$username","$pw");
+  } catch (PDOException $e) {
+    echo "Failed to get DB handle: " . $e->getMessage() . "\n";
+    exit;
+  }
+*/
+
+  
 function chamados(){
 
       try {
@@ -9,7 +38,7 @@ function chamados(){
         $username = "usr_portaltec";
         $pw = "portal@mega2017";
         $dbh = new PDO ("mysql:host=$hostname;port=$port;dbname=$dbname","$username","$pw");
-      }
+      } 
       catch (PDOException $e) {
         echo "Failed to get DB handle: " . $e->getMessage();
         exit;
@@ -54,7 +83,7 @@ function chamados_abertos($area_responsavel){
     ";
     while($row = $stmt->fetch(PDO::FETCH_OBJ)) {
         echo '<tr><td>'.$row->Loja.'</td><td>'.$row->Cidade.'</td><td>'.$row->UF.'</td><td><a href="chamado.php?cod='.$row->NroChamado.'">'.$row->NroChamado.'</a></td><td>'.$row->DatGerUtil.'</td><td>'.$row->TipoSrv.'</td><td>'.$row->Responsavel.'</td></tr>';
-    }
+    }         
     echo "</tbody></table>";
 }
 
@@ -63,7 +92,7 @@ chamados();
 
 
 
-  unset($dbh);
+  unset($dbh); 
   unset($stmt);
 
 

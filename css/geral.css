@@ -1,72 +1,103 @@
 body, html {
   height: 100%;
   color: #58585a;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 a {
-  color: #de1a21; }
+  color: #de1a21;
+}
 
 h2 {
   margin-bottom: 25px;
   background: #f5f5f5;
-  padding: 7px 15px; }
+  padding: 7px 15px;
+  float: left;
+  width: 100%;
+  padding: 2%;
+}
 
 /* abas */
 .nav-tabs {
   margin: 25px 0;
   /*li:last-child{
-  	float: right;
-  	margin-right: 0;
-  }	*/ }
-  .nav-tabs li {
-    margin-right: 15px; }
-  .nav-tabs a {
-    border-radius: 0 !important;
-    background-color: #e5e5e5; }
-  .nav-tabs li.active > a,
-  .nav-tabs li.active > a:focus,
-  .nav-tabs li.active > a:hover {
-    color: #fff;
-    background-color: #de1a21;
-    border: none; }
+		float: right;
+		margin-right: 0;
+	}	*/
+}
+
+.nav-tabs li {
+  margin-right: 15px;
+}
+
+.nav-tabs a {
+  border-radius: 0 !important;
+  background-color: #e5e5e5;
+}
+
+.nav-tabs li.active > a,
+.nav-tabs li.active > a:focus,
+.nav-tabs li.active > a:hover {
+  color: #fff;
+  background-color: #de1a21;
+  border: none;
+}
 
 .message {
   float: left;
   width: 80%;
   text-align: center;
   padding: 20px;
-  margin: 0 10% 25px 10%; }
-  .message.success {
-    background: #ecffe6;
-    border: 1px solid #8ecd90; }
-  .message.error {
-    background: #fff;
-    color: #de1a21;
-    border: 1px solid #de1a21; }
+  margin: 0 10% 25px 10%;
+}
+
+.message.success {
+  background: #ecffe6;
+  border: 1px solid #8ecd90;
+}
+
+.message.error {
+  background: #fff;
+  color: #de1a21;
+  border: 1px solid #de1a21;
+}
 
 /* tabelas */
 table {
   width: 100%;
-  font-size: 14px; }
-  table th {
-    color: #fff;
-    background: #de1a21;
-    padding: 7px;
-    text-transform: uppercase;
-    font-weight: normal;
-    padding: 12px; }
-  table tr {
-    border-bottom: 1px solid #e5e5e5; }
-    table tr:hover {
-      background: #f5f5f5; }
-  table td {
-    padding: 12px; }
-  table td.flag-1 {
-    text-indent: -5000em;
-    background: url(../img/flag-1.png) center center no-repeat; }
-  table td.flag-2 {
-    text-indent: -5000em;
-    background: url(../img/flag-2.png) center center no-repeat; }
+  font-size: 14px;
+}
+
+table th {
+  color: #fff;
+  background: #de1a21;
+  padding: 7px;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 12px;
+}
+
+table tr {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+table tr:hover {
+  background: #f5f5f5;
+}
+
+table td {
+  padding: 12px;
+}
+
+table td.flag-1 {
+  text-indent: -5000em;
+  background: url(../img/flag-1.png) center center no-repeat;
+}
+
+table td.flag-2 {
+  text-indent: -5000em;
+  background: url(../img/flag-2.png) center center no-repeat;
+}
 
 /* formularios */
 .btn {
@@ -75,7 +106,8 @@ table {
   background: #de1a21;
   border: none;
   padding: 7px 25px;
-  border-radius: 0; }
+  border-radius: 0;
+}
 
 select {
   -webkit-appearance: button;
@@ -95,166 +127,238 @@ select {
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .btn.btn-primary {
-  background: #ffc924; }
+  background: #ffc924;
+}
 
 .btn.btn-secondary {
-  background: #a51d21; }
-  .btn.btn-secondary a:hover {
-    color: #fff; }
+  background: #a51d21;
+}
+
+.btn.btn-secondary a:hover {
+  color: #fff;
+}
 
 .extra-action {
-  width: 100%; }
-  .extra-action a {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    background-color: #a51d21;
-    margin-top: 25px; }
-    .extra-action a:hover {
-      color: #fff;
-      text-decoration: underline; }
+  width: 100%;
+}
+
+.extra-action a {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  background-color: #a51d21;
+  margin-top: 25px;
+}
+
+.extra-action a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 
 /* --- TOPO -------------------------------------------------------------*/
 header {
   float: left;
   width: 100%;
-  margin-bottom: 25px; }
-  header .logo {
-    float: left;
-    margin: 30px 0; }
-  header .user-menu {
-    float: right;
-    margin: 45px 0;
-    text-transform: uppercase; }
-    header .user-menu ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none; }
-      header .user-menu ul li {
-        display: inline-block;
-        margin-left: 25px; }
-  header .main-menu {
-    width: 100%;
-    float: left;
-    padding: 10px 0;
-    background: #de1a21;
-    color: #fff; }
-    header .main-menu ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      float: left; }
-      header .main-menu ul li {
-        display: inline-block;
-        margin-right: 25px; }
-    header .main-menu a {
-      color: #fff; }
-    header .main-menu .user {
-      float: right; }
+  margin-bottom: 25px;
+}
+
+header .logo {
+  float: left;
+  margin: 30px 0;
+}
+
+header .user-menu {
+  float: right;
+  margin: 45px 0;
+  text-transform: uppercase;
+}
+
+header .user-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+header .user-menu ul li {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+header .main-menu {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  background: #de1a21;
+  color: #fff;
+}
+
+header .main-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: left;
+}
+
+header .main-menu ul li {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+header .main-menu a {
+  color: #fff;
+}
+
+header .main-menu .user {
+  float: right;
+}
 
 section.main {
   width: 100%;
   float: left;
-  min-height: 600px; }
+  min-height: 600px;
+}
 
 /* --- DASHBOARD -------------------------------------------------------*/
 .dashboard #rede table th:nth-child(5) {
-  text-align: center; }
+  text-align: center;
+}
 
 /* --- CHAMADO INDIVIDUAL ----------------------------------------------*/
 .chamado {
   /*.numero{
-  	h4{
-  		background: #f5f5f5;
-  		padding: 7px 15px;
-  	}
-  }*/
+		h4{
+			background: #f5f5f5;
+			padding: 7px 15px;
+		}
+	}*/
   /*.item{
-  	padding: 2px 15px;
-  }*/ }
-  .chamado .chamado-detalhes {
-    padding: 15px;
-    border: 1px solid #58585a; }
-  .chamado .item.problema p {
-    float: left;
-    margin-right: 50px; }
-  .chamado .tramites h3 {
-    margin-top: 50px;
-    padding: 7px 15px;
-    background: #f5f5f5; }
+		padding: 2px 15px;
+	}*/
+}
+
+.chamado .chamado-detalhes {
+  padding: 15px;
+  border: 1px solid #58585a;
+}
+
+.chamado .item.problema p {
+  float: left;
+  margin-right: 50px;
+}
+
+.chamado .tramites h3 {
+  margin-top: 50px;
+  padding: 7px 15px;
+  background: #f5f5f5;
+}
 
 /* --- GERENCIAR USUARIOS ----------------------------------------------*/
 .gerenciar-usuarios .btn.novo {
   float: left;
   margin-bottom: 25px;
-  background: #ffc924; }
-  .gerenciar-usuarios .btn.novo:hover {
-    background: #de1a21;
-    color: #fff; }
+  background: #ffc924;
+}
+
+.gerenciar-usuarios .btn.novo:hover {
+  background: #de1a21;
+  color: #fff;
+}
 
 /* --- EXCLUIR USUARIO ------------------------------------------------*/
 .delete-user .info-user {
-  margin: 25px 0; }
+  margin: 25px 0;
+}
 
 /*--- LOGIN ------------------------------------------------------------*/
 .login {
   min-height: 100%;
   background: #de1a21;
-  color: #fff; }
-  .login .top {
-    text-align: center;
-    margin-bottom: 25px; }
-  .login img.topo-login {
-    margin: 50px auto; }
-  .login form {
-    margin: auto;
-    max-width: 400px; }
-    .login form p.lost-password {
-      text-align: right;
-      margin-bottom: 25px; }
-      .login form p.lost-password a {
-        color: #fff; }
-    .login form input[type="text"],
-    .login form input[type="password"] {
-      margin-top: 25px;
-      border: 1px solid #fff;
-      border-radius: 0;
-      color: #fff;
-      background-color: #de1a21 !important; }
-      .login form input[type="text"]::-webkit-input-placeholder,
-      .login form input[type="password"]::-webkit-input-placeholder {
-        color: #fff; }
-      .login form input[type="text"]::-moz-placeholder,
-      .login form input[type="password"]::-moz-placeholder {
-        color: #fff;
-        opacity: 1; }
-      .login form input[type="text"]::-ms-input-placeholder,
-      .login form input[type="password"]::-ms-input-placeholder {
-        color: #fff; }
-    .login form .help-block {
-      color: #fff;
-      margin-bottom: 20px;
-      font-weight: 300;
-      font-style: italic;
-      font-size: 12px; }
-  .login footer {
-    display: none; }
+  color: #fff;
+}
+
+.login .top {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login img.topo-login {
+  margin: 50px auto;
+}
+
+.login form {
+  margin: auto;
+  max-width: 400px;
+}
+
+.login form p.lost-password {
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.login form p.lost-password a {
+  color: #fff;
+}
+
+.login form input[type="text"],
+.login form input[type="password"] {
+  margin-top: 25px;
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff;
+  background-color: #de1a21 !important;
+}
+
+.login form input[type="text"]::-webkit-input-placeholder,
+.login form input[type="password"]::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.login form input[type="text"]::-moz-placeholder,
+.login form input[type="password"]::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.login form input[type="text"]::-ms-input-placeholder,
+.login form input[type="password"]::-ms-input-placeholder {
+  color: #fff;
+}
+
+.login form .help-block {
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.login footer {
+  display: none;
+}
 
 /* --- RECUPERAR SENHA ---------------------------------------------------*/
 .login.lost-password {
-  text-align: center; }
-  .login.lost-password .message.success {
-    color: #58585a; }
-  .login.lost-password h2 {
-    float: left;
-    margin-top: 0;
-    width: 100%;
-    background: transparent; }
-  .login.lost-password input {
-    margin-bottom: 25px; }
+  text-align: center;
+}
+
+.login.lost-password .message.success {
+  color: #58585a;
+}
+
+.login.lost-password h2 {
+  float: left;
+  margin-top: 0;
+  width: 100%;
+  background: transparent;
+}
+
+.login.lost-password input {
+  margin-bottom: 25px;
+}
 
 /* --- RODAPE -----------------------------------------------------------*/
 footer {
@@ -263,6 +367,5 @@ footer {
   padding: 20px 0;
   background: #e5e5e5;
   text-align: center;
-  margin-top: 100px; }
-
-/*# sourceMappingURL=geral.css.map */
+  margin-top: 100px;
+}

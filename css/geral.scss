@@ -5,7 +5,7 @@ $cinza-claro: #e5e5e5;
 $amarelo: #ffc924;
 
 body, html{
-	height: 100%;	
+	height: 100%;
 	color: $cinza;
 	font-size: 14px;
 }
@@ -18,6 +18,9 @@ h2{
 	margin-bottom: 25px;
 	background: #f5f5f5;
 	padding: 7px 15px;
+  float: left;
+  width: 100%;
+  padding: 2%;
 }
 
 /* abas */
@@ -30,13 +33,13 @@ h2{
 		border-radius: 0 !important;
 		background-color: $cinza-claro;
 	}
-	li.active>a, 
+	li.active>a,
 	li.active>a:focus,
 	li.active>a:hover {
 	    color: #fff;
 	    background-color: $vermelho;
 	    border: none;
-	}	
+	}
 	/*li:last-child{
 		float: right;
 		margin-right: 0;
@@ -75,7 +78,7 @@ table{
 		font-weight: normal;
 		padding: 12px;
 	}
-	
+
 	tr{
 		border-bottom: 1px solid $cinza-claro;
 
@@ -129,14 +132,14 @@ select{
 .btn.btn-primary{background: $amarelo;}
 
 .btn.btn-secondary{
-	background: $vermelho-escuro;	
+	background: $vermelho-escuro;
 	a{
 		&:hover{color: #fff;}
 	}
 }
 
 .extra-action{
-	width: 100%;		
+	width: 100%;
 
 	a{
 		display: inline-block;
@@ -161,7 +164,7 @@ header{
 
 	.logo{
 		float: left;
-		margin: 30px 0;	
+		margin: 30px 0;
 	}
 
 	.user-menu{
@@ -177,7 +180,7 @@ header{
 			li{
 				display: inline-block;
 				margin-left: 25px;
-			}		
+			}
 		}
 	}
 
@@ -197,7 +200,7 @@ header{
 			li{
 				display: inline-block;
 				margin-right: 25px;
-			}		
+			}
 		}
 
 		a{color: #fff;}
@@ -298,7 +301,7 @@ section.main{
 			text-align: right;
 			margin-bottom: 25px;
 			a{
-				color: #fff;				
+				color: #fff;
 			}
 		}
 
