@@ -19,12 +19,7 @@
         <li>
             <a href="#finesound" data-toggle="tab">Infra de Som</a>
         </li>
-         <!--li>
-            <a href="#mcdonalds" data-toggle="tab">McDonalds</a>
-        </li>
-         <li>
-            <a href="#rede" data-toggle="tab">Status Rede</a>
-        </li-->
+         
     </ul>
 
         <div class="tab-content">

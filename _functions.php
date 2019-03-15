@@ -1,7 +1,9 @@
 <?php
+
 function logged_user($usuario){
 	require_once 'connect-logsportaltecnico.php';
 	$consulta = $pdo->query("SELECT email, area, password, id FROM users WHERE username='$usuario'");
+
 	while($row = $consulta->fetch(PDO::FETCH_ASSOC)) {
 	    $email = $row['email'];
 	    $password = $row['password'];
@@ -9,10 +11,12 @@ function logged_user($usuario){
 	    $id = $row['id'];
 	}
 }
+
 /*
 retorna os chamados em aberto no dashboard
 */
 function chamados_abertos($area_responsavel){
+
 	require 'connect-megaportaltecnico.php';
 	if(!isset($area_responsavel)){
 		$select = "SELECT Loja, Cidade, UF, NroChamado, DatGerUtil, TipoSrv, Responsavel FROM vwMegaChamadosAbertosPrincipal_Mc";
@@ -39,10 +43,13 @@ function chamados_abertos($area_responsavel){
 	}
 	echo "</tbody></table>";
 }
+
+
 /*
 retorna os status de rede no dashboard
 */
 function status_rede(){
+
 	require 'connect-logsportaltecnico.php';
 	$consulta = $pdo->query("SELECT loja, status, cidade, uf, data FROM vwMegaStatusRedeRadioVPN_Mc;");
     echo "
@@ -58,10 +65,12 @@ function status_rede(){
           ";
         while($row = $consulta->fetch(PDO::FETCH_ASSOC)) {
             echo '<tr><td>'.$row['loja'].'</td><td>'.$row['cidade'].'</td><td>'.$row['uf'].'</td><td>'.$row['data'].'</td><td class="flag-'.$row['status'].'">'.$row['status'].'</td></tr>';
-        }
+ELECT loja, status, cidade, uf, data FROM vwMegaStatusRedeRadioVPN_Mc;
     echo "</tbody></table>";
 }
+
 function usuarios_ativos(){
+
 	require 'connect-logsportaltecnico.php';
 	$consulta = $pdo->query("SELECT username, email, area, created_at, id FROM users;");
 	echo "
@@ -79,5 +88,7 @@ function usuarios_ativos(){
 	    echo '<tr><td>'.$row['username'].'</td><td>'.$row['email'].'</td><td>'.$row['area'].'</td><td>'.$row['created_at'].'</td><td><a href="edit-user.php?uid='.$row['id'].'">Editar</a> | <a href="delete-user.php?uid='.$row['id'].'">Excluir</a></td></tr>';
 	}
 	echo "</tbody></table>";
+
 }
+
 ?>
